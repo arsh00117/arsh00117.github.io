@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine 🌹</title>
+
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        background: linear-gradient(135deg,#ff5f9e,#ff2e63);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-family:'Segoe UI',sans-serif;
+        overflow:hidden;
+        cursor:pointer;
+    }
+
+    .card{
+        background:white;
+        padding:40px 50px;
+        border-radius:25px;
+        text-align:center;
+        box-shadow:0 20px 50px rgba(0,0,0,0.3);
+        z-index:10;
+    }
+
+    h1{color:#ff2e63;}
+
+    button{
+        padding:14px 30px;
+        font-size:20px;
+        border:none;
+        border-radius:40px;
+        margin:12px;
+        cursor:pointer;
+    }
+
+    #yes{background:#ff2e63;color:white;}
+    #no{background:#eee;position:absolute;}
+
+    .heart{
+        position:fixed;
+        bottom:-10px;
+        color:white;
+        font-size:20px;
+        animation:float 5s linear infinite;
+    }
+
+    @keyframes float{
+        from{transform:translateY(0);opacity:1;}
+        to{transform:translateY(-110vh);opacity:0;}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+    <h1 id="title">💘 Will You Be My Valentine? 💘</h1>
+    <button id="yes">Yes 💕</button>
+    <button id="no">No 💔</button>
+    <p style="font-size:14px;color:#777;">(tap anywhere if music doesn’t play 🎵)</p>
+</div>
+
+<!-- LOCAL AUDIO (NEVER REMOVED) -->
+<audio id="music" src="sheesha.mp3" loop></audio>
+
+<script>
+const music = document.getElementById("music");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const card = document.getElementById("card");
+
+// autoplay try
+window.onload = () => {
+    music.play().catch(()=>{});
+};
+
+// unlock audio on first click
+document.body.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+// teasing NO
+const texts=["No? 😭","Really? 🥺","Think again 😏","Heartbreaker 💔","Say YES 😈"];
+let i=0;
+
+function moveNo(){
+    noBtn.style.left=Math.random()*(window.innerWidth-120)+"px";
+    noBtn.style.top=Math.random()*(window.innerHeight-60)+"px";
+    noBtn.innerText=texts[i++ % texts.length];
+}
+noBtn.onmouseover=moveNo;
+noBtn.onclick=moveNo;
+
+// YES (music continues 🎶)
+yesBtn.onclick = () => {
+    music.play(); // just in case
+    card.innerHTML = `
+        <h1 style="color:#ff2e63;font-size:40px;">🌹 For You 🌹</h1>
+        <img src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif"
+             style="width:280px;border-radius:20px;">
+        <p style="font-size:22px;margin-top:15px;">
+            You’re My Valentine 💖
+        </p>
+    `;
+};
+
+// hearts
+setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=Math.random()*20+15+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},180);
+</script>
+
+</body>
+</html>
