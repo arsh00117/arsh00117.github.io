@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arshdeep Singh | Executive Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0e0e0e;
+color:#f2f2f2;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+/* ===== Header ===== */
+header{
+position:fixed;
+width:100%;
+padding:14px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(14,14,14,0.95);
+backdrop-filter:blur(8px);
+border-bottom:1px solid rgba(212,175,55,0.15);
+z-index:1000;
+}
+
+header h2{
+font-family:'Playfair Display',serif;
+color:#d4af37;
+font-size:20px;
+letter-spacing:1px;
+}
+
+nav a{
+margin-left:24px;
+text-decoration:none;
+color:#aaa;
+font-size:13px;
+transition:0.3s;
+}
+nav a:hover{
+color:#d4af37;
+}
+
+/* ===== Hero ===== */
+.hero{
+padding:140px 6% 80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.hero-left{
+max-width:550px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
+background:linear-gradient(90deg,#d4af37,#ffffff,#d4af37);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:12px;
+color:#aaa;
+font-size:15px;
+}
+
+/* ===== Solar System ===== */
+.solar-system{
+position:relative;
+width:280px;
+height:280px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.sun{
+position:absolute;
+width:60px;
+height:60px;
+background:radial-gradient(circle,#fff3c4,#d4af37);
+border-radius:50%;
+box-shadow:0 0 40px rgba(212,175,55,0.6);
+}
+
+.orbit{
+position:absolute;
+border:1px solid rgba(212,175,55,0.3);
+border-radius:50%;
+animation:rotate linear infinite;
+}
+
+.orbit1{ width:120px; height:120px; animation-duration:8s; }
+.orbit2{ width:180px; height:180px; animation-duration:14s; }
+.orbit3{ width:240px; height:240px; animation-duration:20s; }
+
+.planet{
+position:absolute;
+width:14px;
+height:14px;
+background:#d4af37;
+border-radius:50%;
+top:-7px;
+left:50%;
+transform:translateX(-50%);
+box-shadow:0 0 12px rgba(212,175,55,0.8);
+}
+
+@keyframes rotate{
+from{ transform:rotate(0deg); }
+to{ transform:rotate(360deg); }
+}
+
+/* ===== Sections ===== */
+section{
+padding:70px 6%;
+}
+
+.section-title{
+font-size:18px;
+color:#d4af37;
+margin-bottom:20px;
+letter-spacing:1px;
+}
+
+/* ===== Education ===== */
+.education-card{
+padding:18px;
+border-radius:14px;
+background:rgba(255,255,255,0.02);
+border:1px solid rgba(212,175,55,0.2);
+margin-bottom:15px;
+transition:0.3s;
+}
+
+.education-card:hover{
+border-color:#d4af37;
+box-shadow:0 10px 25px rgba(212,175,55,0.15);
+}
+
+.education-card h3{
+font-size:15px;
+margin-bottom:6px;
+color:#f5f5f5;
+}
+
+.education-card p{
+font-size:13px;
+color:#aaa;
+}
+
+/* ===== Skills ===== */
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
+padding:8px 18px;
+border:1px solid rgba(212,175,55,0.6);
+border-radius:30px;
+font-size:13px;
+color:#d4af37;
+background:rgba(212,175,55,0.05);
+cursor:pointer;
+transition:all 0.3s ease;
+}
+
+.skill:hover{
+background:#d4af37;
+color:#111;
+box-shadow:
+0 0 10px rgba(212,175,55,0.6),
+0 0 20px rgba(212,175,55,0.5),
+0 0 40px rgba(212,175,55,0.4);
+transform:translateY(-3px);
+}
+
+/* ===== About ===== */
+.about-text{
+max-width:750px;
+font-size:14px;
+color:#aaa;
+line-height:1.8;
+}
+
+/* ===== Footer ===== */
+footer{
+margin-top:40px;
+padding:20px;
+text-align:center;
+font-size:12px;
+color:#666;
+border-top:1px solid rgba(212,175,55,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Arshdeep Singh</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<div class="hero-left">
+<h1>Arshdeep Singh</h1>
+<p>
+Full Stack Developer focused on building high-performance, scalable
+and visually refined digital systems for modern businesses.
+</p>
+</div>
+
+<div class="solar-system">
+<div class="sun"></div>
+<div class="orbit orbit1"><div class="planet"></div></div>
+<div class="orbit orbit2"><div class="planet"></div></div>
+<div class="orbit orbit3"><div class="planet"></div></div>
+</div>
+</section>
+
+<section id="education">
+<div class="section-title">EDUCATION</div>
+
+<div class="education-card">
+<h3>Bachelor of Technology (AI & ML) ~ 2025-Currently</h3>
+<p>Maharaja Agrasen Institute of Technology, Himachal Pradesh</p>
+<p>Under Maharaja Agrasen University</p>
+</div>
+
+<div class="education-card">
+<h3>12th Grade (PCM) ~ 2025</h3>
+<p>Sapient Senior Secondary Public School</p>
+<p>Physics, Chemistry & Mathematics</p>
+</div>
+
+<div class="education-card">
+<h3>10th Grade ~ 2023</h3>
+<p>Sapient Senior Secondary Public School</p>
+</div>
+
+</section>
+
+<section id="skills">
+<div class="section-title">CORE EXPERTISE</div>
+<div class="skills">
+<div class="skill">Python</div>
+<div class="skill">Node.js</div>
+<div class="skill">C++</div>
+<div class="skill">C</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+</div>
+</section>
+
+<section id="about">
+<div class="section-title">ABOUT ME</div>
+<p class="about-text">
+I am a passionate and driven Computer Science student currently pursuing my degree at Maharaja Agrasen Institute of Technology, Himachal Pradesh, under Maharaja Agrasen University. With a strong academic foundation and a deep interest in technology, I am committed to building innovative and performance-focused digital solutions.
+
+I completed both my 10th and 12th education from Sapient Senior Secondary Public School with Physics, Chemistry, and Mathematics. My background in science strengthened my analytical thinking, logical reasoning, and problem-solving skills, which now shape my approach to software development.
+
+I focus on writing clean, efficient, and scalable code while continuously expanding my technical expertise. My goal is to combine technical knowledge with strategic thinking to create impactful digital systems that solve real-world challenges.
+</p>
+</section>
+
+<footer>
+© 2026 Arshdeep Singh | Executive Portfolio
+</footer>
+
+</body>
+</html>
